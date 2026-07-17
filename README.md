@@ -5,4 +5,4 @@ Wheels MD is a simple and intuitive set of calculators and conversion tools for 
 
 NOTE: You need to install the Palm OS MathLib for this app to be fully functional.
 
-<img src="screenshots/1.jpg"/>
+<img src="/screenshots/1.jpeg"/>
