@@ -1,0 +1,1232 @@
+"mdl"
+7
+"WheelsMD","appl","John",1236,505,0
+""
+1236
+1233
+"Wheels MD"
+"1.0"
+""
+"bmpfile"
+1
+"corolla"
+1230
+"..\corolla.bmp"
+"bmpfile"
+1
+"icon"
+1233
+"C:\NSBasic\Bitmaps\cars.bmp"
+"bmpfile"
+1
+"bigIcon"
+1236
+"..\biglogo.bmp"
+"vew"
+4,1003,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Wheels MD"
+"mainForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","performanceBtn",1090,4,100,16,152,#TRUE#,0,"Performance Calculations",0,0,0
+"Sub object1090()
+	'performance calcs
+	NextForm ~performanceForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","Button1139",1139,4,120,16,152,#TRUE#,0,"Drivetrain Calculations",0,0,0
+"Sub object1139()
+	'drivetrain calcs
+	NextForm ~drivetrainForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","Button1140",1140,4,140,16,152,#TRUE#,0,"Maintenance Calculations",0,0,0
+"Sub object1140()
+	'maintenance calcs
+	NextForm ~maintenanceForm~
+End Sub"
+"bmp"
+1
+1230
+"obj"
+3
+"bmp","Bitmap1229",1229,10,40,50,140,#TRUE#,0,"1230",0,0,0
+"Sub object1229()
+	Msgbox ~For those wondering, pictured here is a 2026 Toyota Corolla LE sedan (US version).~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","Label1231",1231,4,20,15,69,#TRUE#,7,"Auto Utilities",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","Button1232",1232,132,0,12,28,#TRUE#,0,"About",0,0,0
+"Sub object1232()
+	'show program
+	MsgBox ~Created with <3 by John Spahr - johnspahr.org~
+End Sub"
+"vew"
+4,1005,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Performance"
+"performanceForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","performanceCloseBtn",1069,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1069()
+	'go back
+	NextForm ~mainForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","horsepowerBtn",1086,8,64,16,144,#TRUE#,0,"Horsepower",0,0,0
+"Sub object1086()
+	NextForm ~horsepowerForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","displacementBtn",1087,8,88,16,144,#TRUE#,0,"Displacement",0,0,0
+"Sub object1087()
+	NextForm ~displacementForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","pistonBtn",1088,8,112,16,144,#TRUE#,0,"Mean Piston Speed",0,0,0
+"Sub object1088()
+	NextForm ~pistonForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","compressionBtn",1089,8,136,16,144,#TRUE#,0,"Compression Ratio",0,0,0
+"Sub object1089()
+	NextForm ~compressionForm~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","perfLbl",1164,8,24,15,132,#TRUE#,7,"Performance Calculations",0,0,0
+""
+"vew"
+4,1007,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Horsepower"
+"horsepowerForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","hpClearBtn",1009,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1009()
+	'clear fields
+	fldTorque.Text = ~~
+	fldHpRPM.Text = ~~
+	fldHorsepower.Text = ~~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","torqueLbl",1010,4,20,11,32,#TRUE#,0,"Torque:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","rpmHpLbl",1011,4,36,11,20,#TRUE#,0,"RPM:",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldTorque",1012,40,20,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldHpRPM",1014,40,36,12,76,#TRUE#,0,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","horsepowerCalcBtn",1016,28,92,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1016()
+	'calc hp
+	Dim torque as Double, rpm as Double, hp as Double
+	torque = Val(fldTorque.Text)
+	rpm = Val(fldHpRPM.Text)
+	hp = (torque * rpm) / 5252
+	fldHorsepower.Text = Str(Round(hp, 1)) + ~ HP~
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldHorsepower",1057,4,124,20,124,#TRUE#,7,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","hpCloseBtn",1065,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1065()
+	'go back
+	NextForm ~performanceForm~
+End Sub"
+"vew"
+4,1018,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Engine Displacement"
+"displacementForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","dispCalcBtn",1019,28,96,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1019()
+	'find engine displacement
+	Dim bore as Double, stroke as Double, cyl as Double, disp as Double
+
+    bore = Val(fldBore.Text)
+
+    stroke = Val(fldStrokeDisp.Text)
+
+    cyl = Val(fldCyl.Text)
+
+    disp = stroke * 3.14159 * (bore / 2)^2 * cyl
+
+    fldDisplacement.Text = Str(Round(disp, 0)) + ~ cc~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","dispClearBtn",1021,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1021()
+	'clear fields
+	fldStrokeDisp.Text = ~~
+	fldBore.Text = ~~
+	fldCyl.Text = ~~
+	fldDisplacement.Text = ~~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","strokeDispLbl",1032,5,20,11,30,#TRUE#,0,"Stroke:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","boreLbl",1033,5,36,11,21,#TRUE#,0,"Bore:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","cylLbl",1034,4,51,11,40,#TRUE#,0,"Cylinders:",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldStrokeDisp",1035,48,20,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldBore",1037,48,36,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldCyl",1039,48,52,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldDisplacement",1059,4,128,16,124,#TRUE#,7,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","dispCloseBtn",1066,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1066()
+	'go back
+	NextForm ~performanceForm~
+End Sub"
+"vew"
+4,1023,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Mean Piston Speed"
+"pistonForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","pistonCalcBtn",1024,28,96,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1024()
+	'find piston mean speed
+	Dim stroke as Double, rpm as Double, mps as Double
+
+    stroke = Val(fldStrokePiston.Text)
+
+    rpm = Val(fldRPMPiston.Text)
+
+    mps = (stroke * 2 * rpm) / 12
+
+    fldPiston.Text = Str(Round(mps, 1)) + ~ fpm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","pistonClearBtn",1026,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1026()
+	'clear fields
+	fldStrokePiston.Text = ~~
+	fldRPMPiston.Text = ~~
+	fldPiston.Text = ~~
+End Sub"
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldStrokePiston",1041,56,20,12,76,#TRUE#,0,"",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","strokePistonLbl",1045,4,20,11,47,#TRUE#,0,"Stroke (in):",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","RpmPistonLbl",1046,4,36,11,20,#TRUE#,0,"RPM:",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldRPMPiston",1047,56,36,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldPiston",1061,4,128,16,124,#TRUE#,7,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","closePistonBtn",1067,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1067()
+	'go back
+	NextForm ~performanceForm~
+End Sub"
+"vew"
+4,1028,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Compression Ratio"
+"compressionForm"
+""
+0
+""
+""
+0,0,0,0
+"lbl"
+1
+"obj"
+3
+"lbl","sweptCompLbl",1049,4,20,11,60,#TRUE#,0,"Swept Volume:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","clearanceCompLbl",1050,4,36,11,57,#TRUE#,0,"Clearance Vol:",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldCompSwept",1053,68,20,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldCompClearance",1055,68,36,12,76,#TRUE#,0,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","compCloseBtn",1068,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1068()
+	'go back
+	NextForm ~performanceForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","compCalcBtn",1102,28,96,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1102()
+	'find compression ratio
+	Dim swept as Double, clearance as Double, cr as Double
+
+    swept = Val(fldCompSwept.Text)
+
+    clearance = Val(fldCompClearance.Text)
+
+    cr = (swept + clearance) / clearance
+
+    fldCompression.Text = Str(Round(cr, 2))
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldCompression",1103,4,128,16,124,#TRUE#,7,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","compClearBtn",1105,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1105()
+	'clear fields
+	fldCompSwept.Text = ~~
+	fldCompClearance.Text = ~~
+	fldCompression.Text = ~~
+End Sub"
+"vew"
+4,1071,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Tire Diameter"
+"diameterForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","diameterCloseBtn",1072,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1072()
+	'go back
+	NextForm ~drivetrainForm~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","tireWidthLbl",1093,5,20,11,52,#TRUE#,0,"Width (mm):",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","aspectRatioLbl",1094,4,36,11,52,#TRUE#,0,"Aspect Ratio:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","rimSizeLbl",1095,4,52,11,52,#TRUE#,0,"Rim Size (in):",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldTireWidth",1096,60,20,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldAspectRatio",1098,60,36,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldRimSize",1100,60,52,12,76,#TRUE#,0,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","diameterCalcBtn",1106,28,92,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1106()
+	'find tire diameter
+	Dim width as Double, aspect as Double, rim as Double, diam as Double
+
+    width = Val(fldTireWidth.Text)
+
+    aspect = Val(fldAspectRatio.Text)
+
+    rim = Val(fldRimSize.Text)
+
+    diam = (((width * (aspect / 100)) / 25.4) * 2) + rim
+
+    fldDiameter.Text = Str(Round(diam, 2)) + ~ in~
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldDiameter",1107,4,124,20,124,#TRUE#,7,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","diameterClearBtn",1109,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1109()
+	'clear fields
+	fldTireWidth.Text = ~~
+	fldAspectRatio.Text = ~~
+	fldRimSize.Text = ~~
+	fldDiameter.Text = ~~
+End Sub"
+"vew"
+4,1074,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Miles Per Gallon"
+"mpgForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","closeMPGBtn",1075,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1075()
+	'go back
+	NextForm ~drivetrainForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","clearMPGBtn",1076,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1076()
+	'clear fields
+	fldMiles.Text = ~~
+	fldGallons.Text = ~~
+	fldMPG.Text = ~~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","milesLbl",1077,4,20,11,52,#TRUE#,0,"Miles Driven:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","Label1078",1078,4,36,11,53,#TRUE#,0,"Gallons Used:",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldMiles",1079,64,20,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldGallons",1081,64,36,12,76,#TRUE#,0,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","mpgCalcBtn",1083,28,92,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1083()
+	'calc mileage
+	Dim miles as Double, gals as Double, mpg as Double
+
+    miles = Val(fldMiles.Text)
+
+    gals = Val(fldGallons.Text)
+
+    mpg = miles / gals
+
+    fldMPG.Text = Str(Round(mpg, 1)) + ~ mpg~
+
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldMPG",1084,4,124,20,124,#TRUE#,7,"",0,0,0
+""
+"vew"
+4,1092,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Drivetrain"
+"drivetrainForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","driveCloseBtn",1165,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1165()
+	'go back
+	NextForm ~mainForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","mpgBtn",1166,8,88,16,144,#TRUE#,0,"Fuel Economy (mpg)",0,0,0
+"Sub object1166()
+	NextForm ~mpgForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","diamBtn",1167,8,112,16,144,#TRUE#,0,"Tire Diameter",0,0,0
+"Sub object1167()
+	NextForm ~diameterForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","speedoBtn",1168,8,136,16,144,#TRUE#,0,"Speedometer Error",0,0,0
+"Sub object1168()
+	NextForm ~speedometerForm~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","drivetrainLbl",1170,8,24,15,118,#TRUE#,7,"Drivetrain Calculations",0,0,0
+""
+"vew"
+4,1111,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Speedometer Error"
+"speedometerForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","speedCloseBtn",1112,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1112()
+	'go back
+	NextForm ~drivetrainForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","speedClearBtn",1113,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1113()
+	'clear fields
+	fldOldD.Text = ~~
+	fldNewD.Text = ~~
+	fldSpeedo.Text = ~~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","oldDiLbl",1114,4,20,11,76,#TRUE#,0,"Old Tire Diameter:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","newDiLbl",1115,4,36,11,79,#TRUE#,0,"New Tire Diameter:",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldOldD",1116,88,20,12,68,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldNewD",1118,88,36,12,68,#TRUE#,0,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","speedoCalcBtn",1120,28,100,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1120()
+	'calc speedometer error %
+	
+	Dim oldD as Double, newD as Double, err as Double
+
+    oldD = Val(fldOldD.Text)
+
+    newD = Val(fldNewD.Text)
+
+    err = ((newD - oldD) / oldD) * 100
+
+    fldSpeedo.Text = Str(Round(err, 2)) + ~%~
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldSpeedo",1121,4,132,16,124,#TRUE#,7,"",0,0,0
+""
+"vew"
+4,1124,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Torque Conversion"
+"torqueForm"
+""
+0
+"Sub Form1124_After()
+	torquePopup.Text = ~NM~
+End Sub"
+""
+0,0,0,0
+"lbl"
+1
+"obj"
+3
+"lbl","torqueToLbl",1126,92,20,11,11,#TRUE#,0,"to:",0,0,0
+""
+"pop"
+2
+#TRUE#,0,2
+"NM	ft-lbs"
+"obj"
+3
+"pop","torquePopup",1127,108,20,12,45,#TRUE#,0,"Popup",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldTorqueCon",1129,4,20,12,84,#TRUE#,0,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","torqueCalcBtn",1131,28,96,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1131()
+	'calc torque conversion
+	Dim inputVal as Double
+
+    inputVal = Val(fldTorqueCon.Text)
+
+    If torquePopup.Text = ~NM~ Then
+    	'to nm
+        fldTorqueRes.Text = Str(Round((inputVal * 1.355818), 1)) + ~ NM~
+    Else
+    	'to pound feet
+        fldTorqueRes.Text = Str(Round((inputVal * 0.737562), 1)) + ~ ft-lbs~
+    End If
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldTorqueRes",1132,4,128,16,124,#TRUE#,7,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","torqueClearBtn",1134,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1134()
+	'clear fields
+	fldTorqueCon.Text = ~~
+	fldTorqueRes.Text = ~~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","torqueCloseBtn",1135,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1135()
+	'go back
+	NextForm ~maintenanceForm~
+End Sub"
+"vew"
+4,1137,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Maintenance"
+"maintenanceForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","maintCloseBtn",1171,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1171()
+	'go back
+	NextForm ~mainForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","Button1172",1172,8,64,16,144,#TRUE#,0,"Torque Converter",0,0,0
+"Sub object1172()
+	NextForm ~torqueForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","Button1173",1173,8,88,16,144,#TRUE#,0,"Amperage Draw / Fuse Selection",0,0,0
+"Sub object1173()
+	NextForm ~ampFuseForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","Button1174",1174,8,112,16,144,#TRUE#,0,"Coolant / Fluid Mix Ratio",0,0,0
+"Sub object1174()
+	NextForm ~coolantForm~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","Button1175",1175,8,136,16,144,#TRUE#,0,"Volume Conversion",0,0,0
+"Sub object1175()
+	NextForm ~volForm~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","maintLbl",1176,8,24,15,130,#TRUE#,7,"Maintenance Calculations",0,0,0
+""
+"vew"
+4,1142,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Amp Draw / Fuse"
+"ampFuseForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","ampFuseCalcBtn",1148,28,56,24,104,#TRUE#,2,"Calculate",0,0,0
+"Sub object1148()
+	'amps and fuse calc
+	Dim watts as Double, volts as Double, amps as Double, fuse as Double
+
+    watts = Val(fldWatts.Text)
+
+    volts = Val(fldVolts.Text) ' Typically 12.0 or 14.4 for cars
+
+    amps = watts / volts
+
+    fuse = amps * 1.35
+
+    fldResultAmps.Text = Str(Round(amps, 1))
+
+    fldResultFuse.Text = Str(Round(fuse, 0))
+
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldResultAmps",1149,4,96,20,124,#TRUE#,7,"",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","clearAmpFuseBtn",1151,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1151()
+	'clear fields
+	fldWatts.Text = ~~
+	fldVolts.Text = ~~
+	fldResultAmps.Text = ~~
+	fldResultFuse.Text = ~~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","ampFuseCloseBtn",1152,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1152()
+	'go back
+	NextForm ~maintenanceForm~
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","wattsLbl",1154,4,20,11,27,#TRUE#,0,"Watts:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","voltsLbl",1155,4,36,11,23,#TRUE#,0,"Volts:",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldVolts",1156,36,36,12,76,#TRUE#,0,"",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldWatts",1158,36,20,12,76,#TRUE#,0,"",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","ampsResLbl",1160,4,84,11,43,#TRUE#,0,"Amp Draw:",0,0,0
+""
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldResultFuse",1161,4,128,20,124,#TRUE#,7,"",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","minFuseLbl",1163,4,116,11,81,#TRUE#,0,"Minimum Safe Fuse:",0,0,0
+""
+"vew"
+4,1178,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Volume Conversion"
+"volForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","volClearBtn",1179,132,144,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1179()
+	'clear fields
+	fldQts.Text = ~~
+	fldLiters.Text = ~~
+	fldML.Text = ~~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","volCloseBtn",1181,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1181()
+	'go back
+	NextForm ~maintenanceForm~
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldML",1201,4,124,16,124,#TRUE#,7,"",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","milLbl",1203,4,112,11,39,#TRUE#,0,"Milliliters:",0,0,0
+""
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldLiters",1204,4,92,16,124,#TRUE#,7,"",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","literLbl",1206,4,80,11,26,#TRUE#,0,"Liters:",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","volCalcBtn",1207,24,44,24,108,#TRUE#,2,"Calculate",0,0,0
+"Sub object1207()
+	'vol calc
+	Dim qts as Double, liters as Double, ml as Double
+
+    qts = Val(fldQts.Text)
+
+    liters = qts * 0.946353
+
+    ml = liters * 1000
+
+    fldLiters.Text = Str(Round(liters, 1)) + ~ L~
+
+    fldML.Text = Str(Round(ml, 0)) + ~ mL~
+End Sub"
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldQts",1208,40,24,12,76,#TRUE#,0,"",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","qtsLbl",1210,4,24,11,31,#TRUE#,0,"Quarts:",0,0,0
+""
+"vew"
+4,1212,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
+"Coolant/Fluid Ratio"
+"coolantForm"
+""
+0
+""
+""
+0,0,0,0
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","coolantClearBtn",1213,134,146,12,24,#TRUE#,0,"Clear",0,0,0
+"Sub object1213()
+	'clear fields
+	fldCapacity.Text = ~~
+	fldPercent.Text = ~~
+	fldConc.Text = ~~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","coolantCloseBtn",1214,124,0,12,36,#TRUE#,0,"Close",0,0,0
+"Sub object1214()
+	'go back
+	NextForm ~maintenanceForm~
+End Sub"
+"fld"
+1
+#FALSE#,#FALSE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","fldConc",1215,8,128,16,124,#TRUE#,7,"",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","Label1217",1217,6,114,11,86,#TRUE#,0,"Concentrate Needed:",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","coolantCalcBtn",1221,24,84,24,108,#TRUE#,2,"Calculate",0,0,0
+"Sub object1221()
+	'coolant/fluid mix ratio
+	Dim capacity as Double, targetPct as Double, concentrate as Double
+
+    capacity = Val(fldCapacity.Text)
+
+    targetPct = Val(fldPercent.Text) ' Enter 50 for a 50/50 mix
+
+    concentrate = capacity * (targetPct / 100)
+
+    fldConc.Text = Str(Round(concentrate, 1))
+End Sub"
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldCapacity",1222,104,24,12,52,#TRUE#,0,"",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","totCapLbl",1224,4,24,11,96,#TRUE#,0,"Total System Capacity:",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","percLbl",1225,4,40,11,43,#TRUE#,0,"Desired %:",0,0,0
+""
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#TRUE#
+"obj"
+3
+"fld","fldPercent",1226,52,40,12,28,#TRUE#,0,"",0,0,0
+""
+"end"
